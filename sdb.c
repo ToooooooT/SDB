@@ -361,7 +361,7 @@ int handle_timetravel (pid_t child, bNode_t *break_table[], long break_table_ind
             // set 0xcc
             unsigned long inst = ptrace(PTRACE_PEEKTEXT, child, break_table_index[i], 0);
             *(uint8_t *)&inst = 0xcc;
-			ptrace(PTRACE_POKETEXT, child, break_table_index[i], inst);
+            ptrace(PTRACE_POKETEXT, child, break_table_index[i], inst);
         }
     }
     return 0;
